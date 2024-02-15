@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="registre.css">
+</head>
+<body>
+    <div class="container">
+		<h1>Créez votre compte</h1>
+		<p>Créé pour les développeurs par les développeurs</p>
+		<form id="registration-form" action="registre.php" method="post">
+			<label for="name" class="lab">Nom et Prenom:</label>
+			<input type="text" id="name" name="name" required>
+
+			<label for="email"class="lab">Email:</label>
+			<input type="email" id="email" name="email" required>
+
+			<label for="password"class="lab">Mot de passe:</label>
+			<input type="password" id="password" name="password" required>
+
+			<label for="confirm-password"class="lab">Confirmer mot de passe:</label>
+			<input type="password" id="confirm-password" name="confirm-password" required>
+
+            <label for="description"class="lab">description</label>
+			<textarea  id="description" name="description" required></textarea>
+            
+<label for="choisir-role" class="lab2">Choisir un rôle : </label>
+
+
+<article class="checkbok">
+    <div class="customCheckBoxHolder">
+        <input type="radio" id="userRole" name="role" class="customCheckBoxInput" value="utilisateur" checked>
+        <label for="userRole" class="customCheckBoxWrapper">
+            <div class="customCheckBox">
+                <div class="inner">utilisateur</div>
+            </div>
+        </label>
+
+        <input type="radio" id="employerRole" name="role" class="customCheckBoxInput" value="employeur">
+        <label for="employerRole" class="customCheckBoxWrapper">
+            <div class="customCheckBox">
+                <div class="inner">employeur</div>
+            </div>
+        </label>
+    </div>
+</article>
+
+			
+<button class="animated-button">
+    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+      ></path>
+    </svg>
+    <span class="text">Créer un compte</span>
+    <span class="circle"></span>
+    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+      ></path>
+    </svg>
+  </button>
+		</form>
+		<p id="message"></p>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>
+    <script src="registre.js"></script>
+</body>
+</html>
