@@ -14,10 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titre = $_POST['titre'];
     $domaine = $_POST['domaine'];
     $adresse = $_POST['adresse'];
+    $nom_du_société = $_POST['name'];
     $salaire = $_POST['salaire'];
     $contrat = $_POST['contrat'];
     $description = $_POST['description'];
-    $sql = "INSERT INTO emploie (titre, description, adresse, domaine, salaire, contrat) VALUES ('$titre', '$description', '$adresse', '$domaine', '$salaire','$contrat')";
+    $sql = "INSERT INTO emploie (titre,nom_du_société, description, adresse, domaine, salaire, contrat) VALUES ('$titre','$nom_du_société', '$description', '$adresse', '$domaine', '$salaire','$contrat')";
 
     if (mysqli_query($connection, $sql)) {
         header("Location: ../homepage/home.html");

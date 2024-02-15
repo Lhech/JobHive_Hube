@@ -1,5 +1,6 @@
 <?php
 include("connexion.php");
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,10 +26,21 @@ include("connexion.php");
       <li><a href="#">Find Job</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-    <article>
-      <button id="signupbtn" class="btn"><a href="../registre/registre.html">Sign Up</a></button>
-      <button id="loginbtn" class="btn"><a href="../login/login.html">login</a></button>
+    <?php
+    $idU=$_SESSION['id_user'];
+    $sql = "SELECT * FROM user WHERE id_user=$idU";
+    $result1 = mysqli_query($connection, $sql);
+
+
+    while ($row = mysqli_fetch_assoc($result1)) {
+
+      ?>
+    <article class="user">
+    
+        <h1 class="nom_user"><?php echo $row['nom_et_prenom']; ?></h1>
+        <p class="role_user"><?php echo $row['role']; ?></p>
     </article>
+    <?php } ?>
   </header>
   <section class="section1">
     <form action="" method="POST">
@@ -56,14 +68,21 @@ include("connexion.php");
 
       ?>
       <article class="article1">
-        <img src="./images/image1.png" alt="socite" srcset="">
         <div class="div2">
-          <a href="#" class="link"><?php echo $row['titre']; ?></a>
+          <a href="#" class="link">
+            <?php echo $row['titre']; ?>
+          </a>
           <div class="div1">
-            <p class="socite"><i class='bx bxs-school'></i><?php echo $row['titre']; ?></p>
-            <p class="location"><i class="ri-map-pin-line"></i><?php echo $row['adresse']; ?></p>
+            <p class="socite"><i class='bx bxs-school'></i>
+              <?php echo $row['nom_du_société']; ?>
+            </p>
+            <p class="location"><i class="ri-map-pin-line"></i>
+              <?php echo $row['adresse']; ?>
+            </p>
           </div>
-          <p class="description"><?php echo $row['description']; ?></p>
+          <p class="description">
+            <?php echo $row['description']; ?>
+          </p>
         </div>
       </article>
       <?php

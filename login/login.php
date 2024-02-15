@@ -33,9 +33,11 @@ if ($result->num_rows > 0) {
         $role = $row['role'];
         switch ($role) {
             case 'utilisateur':
-                header("Location: ../page-utilisateur/home1.html");
+                $_SESSION['id_user'] = $row['id_user'];
+                header("Location: ../page-utilisateur/home11.php");
                 break;
             case 'employeur':
+                $_SESSION['id_user'] = $row['id_user'];
                 header("Location: ../page-employeur/employeur.html");
                 break;
             default:
