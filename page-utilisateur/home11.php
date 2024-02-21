@@ -29,6 +29,7 @@ session_start();
     <?php
     $idU=$_SESSION['id_user'];
     $sql = "SELECT * FROM user WHERE id_user=$idU";
+
     $result1 = mysqli_query($connection, $sql);
 
 

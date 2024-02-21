@@ -20,31 +20,7 @@ html{
     font-size: 25px;
     margin-top: 26px;
 }
-.search{
-    position: absolute;
-    left:30%;
-    top: 9%;
-}
-.search input{
-    border: none;
-    background:#9dbaff63;
-    height: 40px;
-    width: 500px;
-    border-radius: 25px;
-}
-.search button{
-    background:transparent;
-    border: none;
-    color: #5c5c5c;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 25px;
-    font-size: 30px;
-    float: left;
-    margin-top: 3px;
-    margin-left: 20px;
-    
-}
+
 .logo h1{
     color: #4683F8;
     margin-top: 22%;

@@ -3,7 +3,7 @@ session_start();
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "jobhive_hub";
 
 $connection = mysqli_connect($servername, $username, $password, $dbname);
@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
                 break;
             case 'employeur':
                 $_SESSION['id_user'] = $row['id_user'];
-                header("Location: ../page-employeur/employeur.html");
+                header("Location: ../page-employeur/employeurr.php");
                 break;
             default:
                 echo "Invalid role.";

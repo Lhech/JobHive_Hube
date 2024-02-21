@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "jobhive_hub";
 $connection = mysqli_connect($servername, $username, $password, $dbname);
 if (!$connection) {
@@ -30,13 +30,6 @@ session_start();
             <h1>JOBHIVE HUB
             </h1>
         </article>
-        <article class="search">
-            <form action="" method="post">
-                <button type="submit"><i class='bx bx-search'></i></button>
-                <input type="text" placeholder=" Search for jobs..." />
-
-            </form>
-        </article>
         <?php
         $idU = $_SESSION['id_user'];
         $sql = "SELECT * FROM user WHERE id_user=$idU";
@@ -55,12 +48,12 @@ session_start();
                     <?php echo $row['role']; ?>
                 </p>
             </article>
-        <?php } ?>
+        <?php }?>
     </header>
     <section class="section1">
         <article class="article_btn">
             <a href="" id="active">Ajouter un employé</a>
-            <a href="">Afficher mes employé </a>
+            <a href="mes_employeur.php">Afficher mes employé </a>
             <a href="">Messages</a>
             <a href="">Notification</a>
             <a href="#" class="logout"><i class='bx bx-log-in-circle'></i>Deconection</a>
@@ -97,8 +90,8 @@ session_start();
         <article class="btn">
             <button type="submit" class="btn1">Envoyer</button>
             <button disabled="disabled" class="btn1">Annuler</button>
-        </article>
         </form>
+        </article>
     </section>
 </body>
 

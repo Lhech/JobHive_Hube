@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "root";
     $dbname = "jobhive_hub";
 
     $connection = mysqli_connect($servername, $username, $password, $dbname);
